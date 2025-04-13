@@ -1,0 +1,43 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card shadow-sm">
+        <div class="card-header bg-success text-white">
+          <h2 class="text-center mb-0">パスワード再設定</h2>
+        </div>
+        <div class="card-body p-4">
+          <p class="card-text text-center mb-4">新しいパスワードを入力してください</p>
+          
+          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+            <%= f.hidden_field :reset_password_token %>
+
+            <div class="mb-3">
+              <%= f.label :password, "新しいパスワード", class: "form-label" %>
+              <% if @minimum_password_length %>
+                <span class="text-muted">（<%= @minimum_password_length %>文字以上）</span>
+              <% end %>
+              <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: "form-control" %>
+            </div>
+
+            <div class="mb-4">
+              <%= f.label :password_confirmation, "新しいパスワード（確認）", class: "form-label" %>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+            </div>
+
+            <div class="d-grid gap-2 mb-3">
+              <%= f.submit "パスワードを変更する", class: "btn btn-success" %>
+            </div>
+          <% end %>
+
+          <div class="text-center mt-4">
+            <div class="d-flex justify-content-center gap-3">
+              <%= link_to "ログイン", new_session_path(resource_name), class: "btn btn-outline-secondary" %>
+              <%= link_to "アカウント作成", new_registration_path(resource_name), class: "btn btn-outline-primary" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

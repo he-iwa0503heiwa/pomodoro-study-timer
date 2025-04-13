@@ -1,0 +1,83 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <!-- タイマーカード -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-body text-center p-5">
+          <h1 class="display-4 mb-2">ポモドーロタイマー</h1>
+          
+          <div id="timer-display" class="display-1 mb-3">25:00</div>
+          
+          <div class="d-flex justify-content-center gap-3 mb-4">
+            <button id="start-timer" class="btn btn-primary btn-lg">開始</button>
+            <button id="pause-timer" class="btn btn-warning btn-lg" disabled>一時停止</button>
+            <button id="reset-timer" class="btn btn-danger btn-lg" disabled>リセット</button>
+          </div>
+          <!-- timer-statusは現在は勉強中か休憩中か -->
+          <div id="timer-status" class="alert alert-info" style="display: none;"></div>
+        </div>
+      </div>
+      
+      <!-- 統計情報 -->
+      <div class="row mb-4">
+        <div class="col-md-4">
+          <div class="card shadow-sm text-center">
+            <div class="card-body">
+              <h5 class="card-title">今日の学習</h5>
+              <p class="display-6" id="today-duration"><%= @today_duration %>分</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm text-center">
+            <div class="card-body">
+              <h5 class="card-title">今週の学習</h5>
+              <p class="display-6" id="week-duration"><%= @week_duration %>分</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm text-center">
+            <div class="card-body">
+              <h5 class="card-title">合計</h5>
+              <p class="display-6" id="total-duration"><%= @total_duration %>分</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 最近のセッション -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-header">
+          <h5 class="mb-0">最近の学習記録</h5>
+        </div>
+        <div class="card-body">
+          <% if @recent_sessions.present? %>
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>日時</th>
+                    <th>時間</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @recent_sessions.each do |session| %>
+                    <tr>
+                      <td><%= session.start_time.strftime("%Y/%m/%d %H:%M") %></td>
+                      <td><%= session.duration %>分</td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          <% else %>
+            <p class="text-center my-3">まだ学習記録がありません。最初のポモドーロセッションを開始しましょう！</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= javascript_import_module_tag "controllers/timer_controller" %>
