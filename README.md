@@ -1,24 +1,52 @@
-# README
+# ポモドーロ学習タイマー
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 概要
+ポモドーロ・テクニックを使った学習時間管理アプリケーションです。25分の集中作業と5分の休憩を繰り返すことで、効率的な学習をサポートします。学習時間は自動的に記録され、日々の学習状況を可視化できます。
 
-Things you may want to cover:
+## 機能
+- ポモドーロタイマー（25分作業/5分休憩）
+- 学習時間の自動記録
+- 1分ごとの自動保存機能（中断時も学習時間を記録）
+- 日次/週次/合計の学習時間統計
+- ユーザー認証システム
+- プロフィール編集機能
 
-* Ruby version
+## 使用技術
+- Ruby 3.4.2
+- Ruby on Rails 8.0.2
+- SQLite
+- JavaScript
+- Bootstrap 5
+- Devise（認証）
+- Heroku（デプロイ予定）
 
-* System dependencies
+## セットアップ
+```bash
+# リポジトリのクローン
+git clone https://github.com/he-iwa0503heiwa/pomodoro-study-timer.git
+cd pomodoro-study-timer
 
-* Configuration
+# 依存関係のインストール
+bundle install
 
-* Database creation
+# データベースのセットアップ
+rails db:create
+rails db:migrate
 
-* Database initialization
+# サーバー起動
+rails server
 
-* How to run the test suite
+今後の改善点
 
-* Services (job queues, cache servers, search engines, etc.)
+JavaScriptコードのモジュール化とリファクタリング
+フレンド機能の実装（友達の学習時間を見て競争できる機能）
+学習カテゴリの追加
+モバイル対応の強化
+テストの充実
 
-* Deployment instructions
-
-* ...
+スクリーンショット
+（スクリーンショットを追加予定）
+ライセンス
+MIT
+作者
+あなたの名前
