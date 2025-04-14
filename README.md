@@ -20,7 +20,7 @@
 - JavaScript
 - Bootstrap 5
 - Devise（認証）
-- Heroku（デプロイ予定）
+  
 
 ## セットアップ
 ```bash
@@ -40,14 +40,33 @@ rails server
 ```
 ## 今後の改善点
 
-JavaScriptコードのモジュール化とリファクタリング
-フレンド機能の実装（友達の学習時間を見て競争できる機能）
-学習カテゴリの追加
-モバイル対応の強化
-テストの充実
+- リファクタリング
+- テストコード追加
+- 学習記録の参照
+- フレンド機能の実装（友達の学習時間を見て競争できる機能）
+- デプロイ
+- AI機能搭載
+- モバイル対応の強化
 
 ## スクリーンショット
-（スクリーンショットを追加予定）
+トップ画面
+<img width="1470" alt="スクリーンショット 2025-04-14 21 46 54" src="https://github.com/user-attachments/assets/378f67dc-f2de-447a-a6ec-7109272004d3" />
+
+アカウント新規登録画面
+<img width="1470" alt="スクリーンショット 2025-04-14 21 47 14" src="https://github.com/user-attachments/assets/2ad8ae0f-e933-480d-9ce9-4569a7d9d166" />
+
+ログイン画面
+<img width="1470" alt="スクリーンショット 2025-04-14 21 47 35" src="https://github.com/user-attachments/assets/0b0c07dd-dff9-4592-8efb-024497e9ea5e" />
+
+プロフィール画面
+<img width="1470" alt="スクリーンショット 2025-04-14 21 48 56" src="https://github.com/user-attachments/assets/b284c935-2c5e-40a8-ae55-62a6a27803e4" />
+
+プロフィール編集画面
+<img width="1470" alt="スクリーンショット 2025-04-14 21 49 10" src="https://github.com/user-attachments/assets/0fe46c95-b27b-4369-b1f5-d3f81cc9c452" />
+
+タイマー画面
+<img width="1470" alt="スクリーンショット 2025-04-14 21 49 33" src="https://github.com/user-attachments/assets/0758125f-24e0-4694-8d3b-24607bcd5cb2" />
+
 
 
 ## 作者
