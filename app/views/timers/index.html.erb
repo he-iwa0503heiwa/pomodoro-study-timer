@@ -1,4 +1,5 @@
-<div class="container mt-5">
+<!-- app/views/timers/index.html.erb -->
+<div class="container mt-5" data-controller="timer" data-timer-pomodoro-minutes-value="25" data-timer-break-minutes-value="5">
   <div class="row">
     <div class="col-md-8 offset-md-2">
       <!-- タイマーカード -->
@@ -6,15 +7,15 @@
         <div class="card-body text-center p-5">
           <h1 class="display-4 mb-2">ポモドーロタイマー</h1>
           
-          <div id="timer-display" class="display-1 mb-3">25:00</div>
+          <div id="timer-display" data-timer-target="display" class="display-1 mb-3">25:00</div>
           
           <div class="d-flex justify-content-center gap-3 mb-4">
-            <button id="start-timer" class="btn btn-primary btn-lg">開始</button>
-            <button id="pause-timer" class="btn btn-warning btn-lg" disabled>一時停止</button>
-            <button id="reset-timer" class="btn btn-danger btn-lg" disabled>リセット</button>
+            <button id="start-timer" data-action="click->timer#start" class="btn btn-primary btn-lg">開始</button>
+            <button id="pause-timer" data-action="click->timer#pause" class="btn btn-warning btn-lg" disabled>一時停止</button>
+            <button id="reset-timer" data-action="click->timer#reset" class="btn btn-danger btn-lg" disabled>リセット</button>
           </div>
           <!-- timer-statusは現在は勉強中か休憩中か -->
-          <div id="timer-status" class="alert alert-info" style="display: none;"></div>
+          <div id="timer-status" data-timer-target="status" class="alert alert-info" style="display: none;"></div>
         </div>
       </div>
       
@@ -24,7 +25,7 @@
           <div class="card shadow-sm text-center">
             <div class="card-body">
               <h5 class="card-title">今日の学習</h5>
-              <p class="display-6" id="today-duration"><%= @today_duration %>分</p>
+              <p class="display-6" id="today-duration" data-timer-target="todayDuration"><%= @today_duration %>分</p>
             </div>
           </div>
         </div>
@@ -32,7 +33,7 @@
           <div class="card shadow-sm text-center">
             <div class="card-body">
               <h5 class="card-title">今週の学習</h5>
-              <p class="display-6" id="week-duration"><%= @week_duration %>分</p>
+              <p class="display-6" id="week-duration" data-timer-target="weekDuration"><%= @week_duration %>分</p>
             </div>
           </div>
         </div>
@@ -40,7 +41,7 @@
           <div class="card shadow-sm text-center">
             <div class="card-body">
               <h5 class="card-title">合計</h5>
-              <p class="display-6" id="total-duration"><%= @total_duration %>分</p>
+              <p class="display-6" id="total-duration" data-timer-target="totalDuration"><%= @total_duration %>分</p>
             </div>
           </div>
         </div>
@@ -79,5 +80,3 @@
     </div>
   </div>
 </div>
-
-<%= javascript_import_module_tag "controllers/timer_controller" %>
