@@ -14,5 +14,4 @@ export DISABLE_DATABASE_ENVIRONMENT_CHECK=1
 bundle exec rake db:migrate
 
 # 最小限のアセットコンパイル
-bundle exec rake assets:clean
-bundle exec rake assets:precompile SECRET_KEY_BASE_DUMMY=1
+bundle exec rake assets:precompile
