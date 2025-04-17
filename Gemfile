@@ -18,6 +18,8 @@ gem "stimulus-rails"
 gem "jbuilder"
 # 　gemの中にデバイズってライブラリを入れるとログイン認証とか楽に作れるらしい。
 gem "devise"
+# rubyのバージョンも明示
+ruby "3.4.2"
 # PostgreSQL の gem を追加
 gem "pg", "~> 1.4"
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
